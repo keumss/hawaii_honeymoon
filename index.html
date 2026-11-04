@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌺 하와이 9박 11일 신혼여행 완벽 가이드</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coral: {
+                            50: '#fff1f0',
+                            100: '#ffdfdc',
+                            500: '#ff6b52',
+                            600: '#ff4d2e',
+                            700: '#e62e0e',
+                        },
+                        ocean: {
+                            50: '#f0f9ff',
+                            500: '#00b4db',
+                            700: '#0083b0',
+                            900: '#0f2027',
+                        },
+                        sand: {
+                            100: '#fdfbf7',
+                            200: '#f7f3e9',
+                            400: '#f7b731',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles & Tooltip Logic */
+        body {
+            background-color: #FAF9F6;
+            font-family: 'Pretendard', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Hide scrollbars for smooth UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Hover Tooltip Preview Box */
+        #place-preview-tooltip {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0;
+            transform: translateY(10px) scale(0.96);
+            width: 320px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        #place-preview-tooltip.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 28px;
+            top: 24px;
+            bottom: 24px;
+            width: 3px;
+            background: linear-gradient(to bottom, #ff6b52, #00b4db);
+        }
+
+        @media (min-width: 768px) {
+            .timeline-line {
+                left: 36px;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-coral-500 selection:text-white pb-20">
+
+    <!-- Hover Preview Tooltip Element -->
+    <div id="place-preview-tooltip" class="bg-white rounded-2xl overflow-hidden border border-slate-100 hidden">
+        <div class="relative h-44 overflow-hidden bg-slate-100">
+            <img id="tooltip-img" src="" alt="Place Preview" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-bold text-slate-800 flex items-center gap-1 shadow-sm">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 stroke-amber-400"></i>
+                <span id="tooltip-rating">4.8</span>
+            </div>
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8">
+                <span id="tooltip-cat" class="text-[10px] font-extrabold tracking-wider uppercase text-coral-100 bg-coral-600/80 backdrop-blur-sm px-2 py-0.5 rounded-md">카테고리</span>
+                <h4 id="tooltip-title" class="text-white font-bold text-base leading-tight mt-1 truncate">장소 이름</h4>
+            </div>
+        </div>
+        <div class="p-4 bg-white space-y-2">
+            <div class="text-xs text-slate-600 flex items-start gap-1.5">
+                <i data-lucide="info" class="w-4 h-4 text-ocean-500 shrink-0 mt-0.5"></i>
+                <p id="tooltip-desc" class="line-clamp-2 leading-relaxed">설명이 들어가는 자리입니다.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-coral-600 font-semibold">
+                <span id="tooltip-tip" class="truncate pr-2">💡 꿀팁 요약</span>
+                <span class="text-slate-400 font-normal shrink-0">Click으로 지도 열기 ↗</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Hero Section -->
+    <header class="relative bg-gradient-to-r from-ocean-900 via-slate-900 to-slate-800 text-white overflow-hidden py-16 md:py-24 shadow-xl">
+        <div class="absolute inset-0 opacity-25 bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-slate-900/50 to-transparent"></div>
+        
+        <div class="relative max-w-6xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 text-xs md:text-sm font-medium text-coral-100 mb-6 animate-pulse">
+                <span>🌴</span> 루루서하 LuLuSeoha VLOG 검증 완료 9박 11일 일정
+            </div>
+            <h1 class="text-3xl md:text-6xl font-black tracking-tight mb-4 text-white drop-shadow-md">
+                하와이 신혼여행 <span class="text-transparent bg-clip-text bg-gradient-to-r from-coral-500 via-amber-300 to-ocean-500">사진 & 갤러리 가이드</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-slate-300 text-sm md:text-base leading-relaxed mb-8">
+                영상에 등장하는 맛집의 음식 사진, 명소/액티비티 대표 스냅 2~3장을 함께 확인하세요!  
+                <br class="hidden sm:inline">장소 링크에 <span class="text-coral-500 font-semibold underline underline-offset-4">마우스를 올려서(Hover)</span> 구글지도 연결 및 상세 팁을 보실 수 있습니다.
+            </p>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto pt-4 border-t border-white/10">
+                <div class="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10">
+                    <div class="text-2xl font-bold text-coral-500">9박 11일</div>
+                    <div class="text-xs text-slate-400">여행 기간</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10">
+                    <div class="text-2xl font-bold text-ocean-500">18+</div>
+                    <div class="text-xs text-slate-400">검증된 찐맛집</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10">
+                    <div class="text-2xl font-bold text-amber-400">2~3장씩</div>
+                    <div class="text-xs text-slate-400">일정별 시각 사진</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10">
+                    <div class="text-2xl font-bold text-emerald-400">구글지도</div>
+                    <div class="text-xs text-slate-400">Hover 툴팁 지원</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation Tabs & Category Filters -->
+    <div class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 space-y-3">
+            
+            <!-- Day Selection Tabs -->
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1" id="day-tabs">
+                <!-- Tabs Javascript Dynamic Generation -->
+            </div>
+
+            <!-- Category Filter Badges -->
+            <div class="flex items-center justify-between border-t border-slate-100 pt-2 text-xs">
+                <span class="text-slate-400 font-medium shrink-0 flex items-center gap-1">
+                    <i data-lucide="filter" class="w-3.5 h-3.5"></i> 필터:
+                </span>
+                <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar" id="category-filters">
+                    <button data-cat="ALL" class="cat-filter-btn px-3 py-1 rounded-full bg-slate-900 text-white font-semibold transition">전체보기</button>
+                    <button data-cat="FOOD" class="cat-filter-btn px-3 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 font-medium transition flex items-center gap-1">🍴 맛집</button>
+                    <button data-cat="SPOT" class="cat-filter-btn px-3 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 font-medium transition flex items-center gap-1">🏖️ 명소</button>
+                    <button data-cat="ACT" class="cat-filter-btn px-3 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 font-medium transition flex items-center gap-1">🏄‍♂️ 액티비티</button>
+                    <button data-cat="STAY" class="cat-filter-btn px-3 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 font-medium transition flex items-center gap-1">🏨 숙소/팁</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        
+        <!-- Day Section Header -->
+        <div id="day-header" class="mb-8">
+            <div class="flex items-center gap-3">
+                <span id="day-badge" class="bg-coral-500 text-white font-extrabold text-sm px-3 py-1 rounded-full shadow-sm">DAY 1</span>
+                <h2 id="day-title" class="text-2xl md:text-3xl font-extrabold text-slate-900">호놀룰루 도착 & 와이키키 첫날</h2>
+            </div>
+            <p id="day-subtitle" class="text-slate-500 text-sm mt-1">공항 입국, 렌터카 수령 및 와이키키 시내 적응 코스</p>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="relative pl-3 md:pl-6">
+            <!-- Continuous Timeline Line -->
+            <div class="timeline-line rounded-full"></div>
+
+            <!-- Event Cards Container -->
+            <div id="timeline-cards" class="space-y-6">
+                <!-- Event cards rendered via JS -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bottom Honeymoon Essential Tips Accordion / Highlights Section -->
+    <section class="max-w-4xl mx-auto px-4 mt-16 pt-12 border-t border-slate-200">
+        <div class="flex items-center gap-2 text-coral-600 font-bold text-sm mb-2">
+            <i data-lucide="sparkles" class="w-4 h-4"></i> 하와이 신혼여행 성공 노하우
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-6">꼭 알고 가야 할 꿀팁 요약 노트</h3>
+
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm space-y-2">
+                <div class="flex items-center gap-2 font-bold text-slate-800">
+                    <span class="w-7 h-7 rounded-lg bg-coral-50 text-coral-600 flex items-center justify-center text-sm">🚗</span>
+                    렌터카 & 주차 팁
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    와이키키 발렛 주차비는 박당 $50~$70 선으로 매우 비쌉니다. 호놀룰루 Zoo 주차장($1.5/h)이나 하와이안 아일랜드 무료 주차 구역을 사전에 확인하세요. 오픈카는 트렁크가 좁으니 캐리어 2개 이상이면 사이즈 체크 필수!
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm space-y-2">
+                <div class="flex items-center gap-2 font-bold text-slate-800">
+                    <span class="w-7 h-7 rounded-lg bg-ocean-50 text-ocean-600 flex items-center justify-center text-sm">📅</span>
+                    필수 예약 장소 리스트
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    다이아몬드 헤드 등산(30일 전 오픈), 하나우마 베이(2일 전 오픈), 톤카츠 타마후지(1~2달 전 오픈)는 예약이 매우 치열합니다. 예약 필수 파인 다이닝은 OpenTable 앱을 활용하세요.
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm space-y-2">
+                <div class="flex items-center gap-2 font-bold text-slate-800">
+                    <span class="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center text-sm">💵</span>
+                    팁 문화 & 디저트 모음
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    서빙 레스토랑 팁은 보통 18%~22% 수준. 레스토랑 예약 시 'Honeymoon Anniversary' 메모를 남기면 무료 샴페인이나 축하 디저트 서비스를 받는 확률이 높습니다!
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm space-y-2">
+                <div class="flex items-center gap-2 font-bold text-slate-800">
+                    <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm">🐢</span>
+                    액티비티 준비물
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    하와이는 해양 생태계 보호를 위해 'Reef-Safe(산호초 보호)' 선크림 사용이 법제화되어 있습니다. 거북이 스노클링 시 거북이와 최소 3미터 거리를 유지해야 벌금을 피할 수 있습니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-20 text-center text-slate-400 text-xs py-8 border-t border-slate-200">
+        <p>🌺 Hawaii Honeymoon Interactive Itinerary Guide</p>
+        <p class="mt-1">유튜브 '루루서하 LuLuSeoha' 9박 11일 VLOG 바탕 데이터 재구성</p>
+    </footer>
+
+    <!-- JavaScript Application Engine -->
+    <script>
+        // Data Structure for Itinerary with Multi-Image Support
+        const ITINERARY_DATA = [
+            {
+                day: 1,
+                title: "호놀룰루 도착 & 와이키키 탐색",
+                subtitle: "입국 수속, 렌터카 수령 및 첫날 오션뷰 저녁",
+                events: [
+                    {
+                        time: "10:00 AM",
+                        title: "호놀룰루 공항(HNL) 도착 & 렌터카 수령",
+                        category: "STAY",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJgdyP_9NtAHwR1x8eH-vX3_U",
+                        img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80", caption: "공항 전경 및 수하물 수령" },
+                            { url: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80", caption: "컨버터블 렌터카 수령" }
+                        ],
+                        rating: "4.1",
+                        desc: "다니엘 K. 이노우에 국제공항 도착 후 셔틀을 타고 렌터카 업체(Hertz, Alamo 등)로 이동하여 차량 수령.",
+                        tip: "오픈카(컨버터블)는 트렁크가 작아 28인치 캐리어 2개가 다 안 실릴 수 있으니 뒷좌석 활용!",
+                        badge: "공항 & 이동"
+                    },
+                    {
+                        time: "01:30 PM",
+                        title: "점심: 니코스 피어 38 (Nico's Pier 38)",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJV6TLr0VuAHwR4VCm9dS2f90",
+                        img: "https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=600&q=80", caption: "신선한 후리카케 아히 스테이크" },
+                            { url: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80", caption: "하와이안 아히 포케 플레이트" },
+                            { url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", caption: "항구 옆 오픈에어 테라스" }
+                        ],
+                        rating: "4.4 (8.8K)",
+                        desc: "항구 바로 앞에 위치하여 신선한 참치 요리와 포케를 즐길 수 있는 현지 인기 로컬 맛집.",
+                        tip: "추천메뉴: 후리카케 아히(Furikake Ahi), 신선한 아히 포케 플레이트",
+                        badge: "포케 & 스테이크"
+                    },
+                    {
+                        time: "03:30 PM",
+                        title: "숙소 체크인 & 휴식 (가성비 리조트)",
+                        category: "STAY",
+                        mapUrl: "https://www.google.com/maps/place/?q=Waikiki+Beach",
+                        img: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80", caption: "와이키키 리조트 객실 뷰" },
+                            { url: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80", caption: "호텔 야외 수영장 파라솔" }
+                        ],
+                        rating: "4.7",
+                        desc: "와이키키 중심가 가성비 리조트 체크인 후 장시간 비행 피로 회복 및 짐 정리.",
+                        tip: "호텔 리조트 피(Resort Fee)에 포함된 비치 체어 & 타올 대여 서비스 확인!",
+                        badge: "와이키키 숙소"
+                    },
+                    {
+                        time: "06:30 PM",
+                        title: "저녁: 야드 하우스 (Yard House)",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJx9yme3VyAHwRe_ohxznO4aQ",
+                        img: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80", caption: "하프야드(Half-Yard) 수제맥주" },
+                            { url: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80", caption: "바삭한 포케 타코 & 피자" },
+                            { url: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80", caption: "야드하우스 와이키키 분위기" }
+                        ],
+                        rating: "4.5 (7.8K)",
+                        desc: "다양한 수제 맥주와 아메리칸 펍 푸드를 신나게 즐길 수 있는 와이키키 핫플레이스.",
+                        tip: "시그니처: Half-Yard(긴 잔) 맥주, 포케 타코, 평일 해피아워 할인(14:00~17:30)",
+                        badge: "수제 맥주 펍"
+                    }
+                ]
+            },
+            {
+                day: 2,
+                title: "와이키키 해변 & 서핑 액티비티",
+                subtitle: "에메랄드빛 바다에서 즐기는 서핑과 토마호크 스테이크",
+                events: [
+                    {
+                        time: "08:30 AM",
+                        title: "아침: 아일랜드 빈티지 커피",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJj6h52FZzAHwRV864YY0Y1Vw",
+                        img: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80", caption: "상큼한 오리지널 아사이 볼" },
+                            { url: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80", caption: "시그니처 아일랜드 랏테" }
+                        ],
+                        rating: "4.3 (3.8K)",
+                        desc: "하와이 최고의 아사이 볼과 고소한 아일랜드 랏테를 맛볼 수 있는 필수 카페.",
+                        tip: "대기 줄이 긴 편이므로 아침 일찍 방문 추천. 오리지널 아사이볼 강추!",
+                        badge: "아사이볼 & 커피"
+                    },
+                    {
+                        time: "10:30 AM",
+                        title: "와이키키 비치 서핑 레슨",
+                        category: "ACT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJ9T1mPXRyAHwROp3K81mIsP8",
+                        img: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=600&q=80", caption: "와이키키 잔잔한 파도 서핑" },
+                            { url: "https://images.unsplash.com/photo-1455729552865-3ef5887cd601?auto=format&fit=crop&w=600&q=80", caption: "에메랄드빛 와이키키 해변" }
+                        ],
+                        rating: "4.8",
+                        desc: "초보자도 쉽게 배울 수 있는 와이키키의 잔잔한 파도에서 즐기는 2시간 입문 서핑.",
+                        tip: "래시가드, 아쿠아슈즈 준비 필수! 고프로 촬영 옵션 선택 가능.",
+                        badge: "수상 액티비티"
+                    },
+                    {
+                        time: "01:00 PM",
+                        title: "점심: 지오반니 쉬림프 트럭",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJNejaUy5fAHwRdwgjIfjKd_M",
+                        img: "https://images.unsplash.com/photo-1559742811-822863c46f83?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1559742811-822863c46f83?auto=format&fit=crop&w=600&q=80", caption: "대표 메뉴 갈릭 스캠피 새우" },
+                            { url: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=600&q=80", caption: "매콤한 핫 앤 스파이시 새우" },
+                            { url: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80", caption: "지오반니 트럭 그래피티 전경" }
+                        ],
+                        rating: "4.1 (10.5K)",
+                        desc: "마늘 향 가득한 버터 갈릭 새우 라이스를 맛보는 하와이 대표 푸드트럭.",
+                        tip: "갈릭 스캠피(Garlic Scampi) 원픽! 위생장갑이나 물티슈를 챙겨가면 아주 유용함.",
+                        badge: "하와이 푸드트럭"
+                    },
+                    {
+                        time: "07:00 PM",
+                        title: "저녁: 루스 크리스 스테이크 하우스",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJx9yme3VyAHwRCSuD84uX3WM",
+                        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", caption: "버터 시즐링 토마호크 스테이크" },
+                            { url: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80", caption: "쁘띠 필레 미뇽 안심" },
+                            { url: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80", caption: "기념일 페어링 레드 와인" }
+                        ],
+                        rating: "4.5 (3.2K)",
+                        desc: "뜨거운 버터 플레이트에 나오는 고소하고 부드러운 하와이 3대 스테이크 전문점.",
+                        tip: "오픈테이블 예약 시 'Honeymoon' 요청사항 기재 시 기념 디저트 제공!",
+                        badge: "드라이에이징 스테이크"
+                    }
+                ]
+            },
+            {
+                day: 3,
+                title: "오아후 동부 해안 드라이브 투어",
+                subtitle: "화산 분화구 전망과 에메랄드빛 카일루아 해변",
+                events: [
+                    {
+                        time: "09:00 AM",
+                        title: "다이아몬드 헤드 (Diamond Head) 등산",
+                        category: "SPOT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJmSAXAYlyAHwRUuIwMlELnkI",
+                        img: "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80", caption: "정상에서 본 오아후 파노라마 뷰" },
+                            { url: "https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=600&q=80", caption: "다이아몬드 헤드 분화구 트레일" }
+                        ],
+                        rating: "4.7 (17.4K)",
+                        desc: "호놀룰루 전체 풍경과 와이키키 해변을 한눈에 내려다볼 수 있는 대표 랜드마크.",
+                        tip: "방문 30일 전 공식 홈페이지 사전 예약 필수! 모자와 생수 준비하세요.",
+                        badge: "트레킹 & 명소"
+                    },
+                    {
+                        time: "11:30 AM",
+                        title: "하나우마 베이 (Hanauma Bay) 관망",
+                        category: "SPOT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJv8OgpXMSAHwR-htdFp00cOI",
+                        img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80", caption: "환상적인 하나우마 베이 전경" },
+                            { url: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&fit=crop&w=600&q=80", caption: "산호초와 에메랄드빛 해안" }
+                        ],
+                        rating: "4.4 (2.6K)",
+                        desc: "해양생물 보호구역으로 지정된 환상적인 에메랄드빛 해안 만.",
+                        tip: "스노클링 예약 실패 시에도 전망대 드라이브 코스로 최고의 뷰를 자랑합니다.",
+                        badge: "해양 보호구역"
+                    },
+                    {
+                        time: "01:00 PM",
+                        title: "점심: 테디스 비거 버거",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJY3-v_3RyAHwRChz8C8Cpx94",
+                        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80", caption: "두툼한 패티의 수제 버거" },
+                            { url: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80", caption: "바삭한 감자튀김 & 고구마튀김" }
+                        ],
+                        rating: "4.3 (2.1K)",
+                        desc: "육즙 가득한 수제 패티와 특제 소스로 만든 하와이 3대 버거 브랜드.",
+                        tip: "추천: 하와이안 버거(파인애플 포함), 고구마 튀김(Sweet Potato Fries)",
+                        badge: "하와이 수제버거"
+                    },
+                    {
+                        time: "03:00 PM",
+                        title: "카일루아 & 라니카이 비치 (Lanikai Beach)",
+                        category: "SPOT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJfy9okvgUAHwRseIWasniUOw",
+                        img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80", caption: "곱고 하얀 라니카이 백사장" },
+                            { url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", caption: "투명하고 에메랄드빛 바다" }
+                        ],
+                        rating: "4.8 (2.2K)",
+                        desc: "'천국의 바다'라 불리는 곱고 하얀 모래사장과 맑고 투명한 바다.",
+                        tip: "주차장이 별도로 없어 주택가에 매너 주차 필요. 돗자리 준비 권장.",
+                        badge: "세계 10대 해변"
+                    }
+                ]
+            },
+            {
+                day: 4,
+                title: "노스쇼어 투어 & 거북이 탐사",
+                subtitle: "파인애플 농장, 야생 바다거북 및 포터하우스 스테이크",
+                events: [
+                    {
+                        time: "09:30 AM",
+                        title: "돌 파인애플 농장 (Dole Plantation)",
+                        category: "SPOT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJwZvsTNBdAHwRRyYkvyduvr8",
+                        img: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=600&q=80", caption: "상큼한 파인애플 돌윕 아이스크림" },
+                            { url: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6?auto=format&fit=crop&w=600&q=80", caption: "파인애플 익스프레스 열차" }
+                        ],
+                        rating: "4.2 (39.1K)",
+                        desc: "파인애플 기차 및 세계 최대 미로가 있는 노스쇼어 인근 테마 파크.",
+                        tip: "상콤달콤한 디저트 '파인애플 돌윕(Dole Whip) 소프트 아이스크림' 필수!",
+                        badge: "테마 파크"
+                    },
+                    {
+                        time: "12:00 PM",
+                        title: "라니아케아 비치 (거북이 비치)",
+                        category: "SPOT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJXda1wDFfAHwRqS0G_uX4Eaw",
+                        img: "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=600&q=80", caption: "백사장에 누워있는 야생 바다거북" },
+                            { url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80", caption: "스노클링 중 만나는 바다거북" }
+                        ],
+                        rating: "4.6 (4.1K)",
+                        desc: "모래사장에 올라와 햇살을 받으며 휴식을 취하는 야생 바다거북을 만나는 곳.",
+                        tip: "법적 동물 보호 조항으로 거북이와 최소 3미터(10ft) 거리 유지 준수!",
+                        badge: "야생 거북이"
+                    },
+                    {
+                        time: "02:30 PM",
+                        title: "점심: 쿠아아이나 버거 (Kua Aina)",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJR74TOSlfAHwR1x7ACls6s88",
+                        img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80", caption: "신선한 아보카도 가득 수제 버거" },
+                            { url: "https://images.unsplash.com/photo-1528830984461-4d5c3cc1abf0?auto=format&fit=crop&w=600&q=80", caption: "할레이바 본점 외관" }
+                        ],
+                        rating: "4.4 (1.8K)",
+                        desc: "할레이바 타운에서 시작된 신선한 아보카도가 가득 들어간 버거 맛집.",
+                        tip: "아보카도 버거와 그릴드 마히마히(생선) 버거 세트 추천",
+                        badge: "할레이바 버거"
+                    },
+                    {
+                        time: "07:30 PM",
+                        title: "저녁: 울프강 스테이크하우스",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJpUw6wnVyAHwRzET_WIb4lVo",
+                        img: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80", caption: "드라이에이징 28일 포터하우스" },
+                            { url: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", caption: "지글거리는 버터 소스 플레이팅" }
+                        ],
+                        rating: "4.2 (4.6K)",
+                        desc: "28일간 숙성시킨 최상급 포터하우스 스테이크의 정수를 맛볼 수 있는 레스토랑.",
+                        tip: "포터하우스 For Two 코스 메뉴 추천. 사전 예약 권장.",
+                        badge: "파인 다이닝"
+                    }
+                ]
+            },
+            {
+                day: 5,
+                title: "알라모아나 쇼핑 & 선셋 캣타마란",
+                subtitle: "쇼핑과 도넛, 붉은 노을 속 로맨틱 요트 투어",
+                events: [
+                    {
+                        time: "10:00 AM",
+                        title: "알라모아나 센터 (Ala Moana Center)",
+                        category: "SPOT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJU29iq_BtAHwRaPcdRx0xfyI",
+                        img: "https://images.unsplash.com/photo-1567449303078-57ad995bd301?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1567449303078-57ad995bd301?auto=format&fit=crop&w=600&q=80", caption: "알라모아나 야외 쇼핑몰 전경" },
+                            { url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80", caption: "하와이 브랜드 부티크" }
+                        ],
+                        rating: "4.5 (26.9K)",
+                        desc: "세계 최대 규모의 야외 쇼핑몰. 명품부터 하와이 브랜드까지 총집합.",
+                        tip: "고객센터(Customer Center)에서 할인 쿠폰북 책자 수령 후 쇼핑 시작!",
+                        badge: "쇼핑 아울렛"
+                    },
+                    {
+                        time: "01:00 PM",
+                        title: "디저트: 레오나즈 베이커리 (Leonard's)",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJ8f-_yGpzAHwRv41C3S1Qv7Y",
+                        img: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=600&q=80", caption: "갓 튀겨낸 따끈한 말라사다 도넛" },
+                            { url: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80", caption: "코코넛 크림 속 타피오카" }
+                        ],
+                        rating: "4.6 (11.2K)",
+                        desc: "갓 튀겨낸 따끈하고 쫄깃한 포르투갈식 도넛 '말라사다' 전문점.",
+                        tip: "오리지널 설탕맛 & 코코넛(하우피아) 크림 맛은 무조건 주문!",
+                        badge: "말라사다 도넛"
+                    },
+                    {
+                        time: "05:00 PM",
+                        title: "선셋 캣타마란 요트 투어",
+                        category: "ACT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJ838uOnRyAHwR1x4bX2E8s88",
+                        img: "https://images.unsplash.com/photo-1500514966906-fe245eea9344?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1500514966906-fe245eea9344?auto=format&fit=crop&w=600&q=80", caption: "와이키키 노을 세일링 크루즈" },
+                            { url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", caption: "붉게 물드는 석양 파노라마" }
+                        ],
+                        rating: "4.8",
+                        desc: "와이키키 해변 앞바다에서 노을을 바라보며 무제한 음료/맥주를 즐기는 선셋 크루즈.",
+                        tip: "승선 30분 전 멀미약 복용 추천. 화이트 톤 드레스코드로 인생샷 도전!",
+                        badge: "요트 크루즈"
+                    },
+                    {
+                        time: "08:00 PM",
+                        title: "저녁: 듀크스 와이키키 (Duke's Waikiki)",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJ81Tf1nVyAHwR2B1p22-94kM",
+                        img: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80", caption: "비치 프론트 라이브 바 야경" },
+                            { url: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80", caption: "시그니처 대형 헐라 파이(Hula Pie)" }
+                        ],
+                        rating: "4.5 (6.2K)",
+                        desc: "해변 바로 앞에 위치하여 라이브 음악과 하와이안 분위기를 만끽하는 비치 뷰 바.",
+                        tip: "시그니처 디저트 '헐라 파이(Hula Pie)'는 엄청난 크기를 자랑합니다!",
+                        badge: "라이브 비치바"
+                    }
+                ]
+            },
+            {
+                day: 6,
+                title: "오픈도어 헬기 투어 & 파인 다이닝",
+                subtitle: "하늘에서 내려다보는 오아후와 오션뷰 럭셔리 디너",
+                events: [
+                    {
+                        time: "09:00 AM",
+                        title: "오픈도어 헬리콥터 투어",
+                        category: "ACT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJR3-5M_BtAHwRnO3A8_x3A88",
+                        img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=600&q=80", caption: "하늘에서 내려다본 오아후 해안선" },
+                            { url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80", caption: "오픈도어 탑승 비행 스냅" }
+                        ],
+                        rating: "4.9 (1.2K)",
+                        desc: "문이 제거된 오픈도어 헬기를 타고 하나우마 베이, 폭포, 분화구를 조망하는 액티비티.",
+                        tip: "바람이 매우 강하므로 겉옷 필수, 신발끈 꽉 묶기, 핸드폰 스트랩 장착!",
+                        badge: "익스트림 액티비티"
+                    },
+                    {
+                        time: "06:30 PM",
+                        title: "저녁: 53 By The Sea (파인 다이닝)",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJ5UdG3QZuAHwRuXq2Dnpvfp4",
+                        img: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=600&q=80", caption: "다이아몬드 헤드 오션뷰 메인 홀" },
+                            { url: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", caption: "럭셔리 씨푸드 & 스테이크 코스" }
+                        ],
+                        rating: "4.5 (1.4K)",
+                        desc: "다이아몬드 헤드와 와이키키 바다 전체가 보이는 최고의 로맨틱 오션뷰 레스토랑.",
+                        tip: "드레스코드(스마트 캐주얼, 반바지/슬리퍼 불가) 준수 필수! 수개월 전 예약.",
+                        badge: "오션뷰 파인다이닝"
+                    }
+                ]
+            },
+            {
+                day: 7,
+                title: "마카푸우 트레일 & 패러세일링",
+                subtitle: "해안 등 산책과 시원한 와이키키 상공 패러세일링",
+                events: [
+                    {
+                        time: "09:30 AM",
+                        title: "마카푸우 포인트 등대 트레일",
+                        category: "SPOT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJL4N5-qgRAHwRHX3-8a3A88",
+                        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", caption: "마카푸우 해안 산책로 전경" },
+                            { url: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80", caption: "빨간 지붕 마카푸우 등대" }
+                        ],
+                        rating: "4.7 (3.1K)",
+                        desc: "잘 포장된 산책로를 따라 오르는 동쪽 해안 등대 산책 코스.",
+                        tip: "경사가 완만하여 걷기 편함. 겨울/봄 시즌에는 혹등고래도 관측 가능!",
+                        badge: "해안 산책로"
+                    },
+                    {
+                        time: "03:00 PM",
+                        title: "와이키키 패러세일링 (Parasailing)",
+                        category: "ACT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJL0vXQ3VyAHwRqX196-s3A88",
+                        img: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80", caption: "150m 상공에서 본 와이키키 바다" },
+                            { url: "https://images.unsplash.com/photo-1500514966906-fe245eea9344?auto=format&fit=crop&w=600&q=80", caption: "보트 딥핑(Dipping) 순간" }
+                        ],
+                        rating: "4.8",
+                        desc: "보트에 줄을 매달아 와이키키 바다 상공 150m 높이까지 올라가는 짜릿한 체험.",
+                        tip: "바다 퐁당(Dipping) 옵션을 선택하면 더욱 스릴 넘치는 액티비티 완성!",
+                        badge: "해양 액티비티"
+                    },
+                    {
+                        time: "07:00 PM",
+                        title: "저녁: L&L 하와이안 바비큐",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJK9-0NXRyAHwRQ3x7-S1v888",
+                        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", caption: "푸짐한 하와이안 로코모코 플레이트" },
+                            { url: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80", caption: "갈비 BBQ 콤보 믹스" }
+                        ],
+                        rating: "4.2 (1.1K)",
+                        desc: "로코모코, 갈비 BBQ 플레이트 등 하와이 전통 로컬 푸드 프랜차이즈.",
+                        tip: "가성비 좋고 양이 푸짐함. 계란노른자를 터뜨려먹는 로코모코 강추!",
+                        badge: "로코모코 맛집"
+                    }
+                ]
+            },
+            {
+                day: 8,
+                title: "와이켈레 아울렛 & 명품 돈카츠",
+                subtitle: "신혼여행 선물 쇼핑과 하와이 인생 돈카츠",
+                events: [
+                    {
+                        time: "10:00 AM",
+                        title: "와이켈레 프리미엄 아울렛",
+                        category: "SPOT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJ95l4J35eAHwRj3w7-_4s888",
+                        img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80", caption: "와이켈레 아울렛 명품 매장 거리" },
+                            { url: "https://images.unsplash.com/photo-1567449303078-57ad995bd301?auto=format&fit=crop&w=600&q=80", caption: "쇼핑 후 휴식 쉼터" }
+                        ],
+                        rating: "4.4 (8.9K)",
+                        desc: "코치, 폴로, 토리버치, 타미 등을 파격적인 할인 가격에 구매 가능한 아울렛.",
+                        tip: "SIMON VIP 클럽 앱 회원가입 시 추가 할인 쿠폰 제공!",
+                        badge: "아울렛 쇼핑"
+                    },
+                    {
+                        time: "06:00 PM",
+                        title: "저녁: 톤카츠 타마후지 (Tonkatsu Tamafuji)",
+                        category: "FOOD",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJJ91y3-ZyAHwR431e_87a888",
+                        img: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80", caption: "육즙 가득 두툼한 프리미엄 로스카츠" },
+                            { url: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80", caption: "바삭한 히레카츠 & 솥밥 한상" }
+                        ],
+                        rating: "4.8 (2.4K)",
+                        desc: "하와이 최고의 돈카츠 맛집. 겉은 극상의 바삭함과 속은 육즙 가득한 수제 카츠.",
+                        tip: "예약 오픈 시 단 몇 분 만에 마감되므로 1~2달 전 필수 예약!",
+                        badge: "인생 돈카츠"
+                    }
+                ]
+            },
+            {
+                day: 9,
+                title: "카카아코 벽화거리 & 쇼핑 마무리학",
+                subtitle: "스트리트 아트 포토존과 월마트 기념품 쇼핑",
+                events: [
+                    {
+                        time: "10:30 AM",
+                        title: "카카아코 벽화 마을 (Kakaako Wall Art)",
+                        category: "SPOT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJZ8l81QZuAHwR5x-899s888",
+                        img: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80", caption: "컬러풀한 캐릭터 벽화 아트" },
+                            { url: "https://images.unsplash.com/photo-1567449303078-57ad995bd301?auto=format&fit=crop&w=600&q=80", caption: "카카아코 스트리트 스냅 존" }
+                        ],
+                        rating: "4.6",
+                        desc: "트렌디한 감성의 대형 그래피티와 스트리트 아트가 가득한 포토 스팟.",
+                        tip: "색감 화려한 옷을 입고 스냅 사진 촬영하기 최고의 장소!",
+                        badge: "포토스팟"
+                    },
+                    {
+                        time: "04:00 PM",
+                        title: "기념품 쇼핑 (월마트 & ABC 스토어)",
+                        category: "SPOT",
+                        mapUrl: "https://www.google.com/maps/place/?q=place_id:ChIJn9z3XfBtAHwRnX16-_s888",
+                        img: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=600&q=80", caption: "하와이안 호스트 초콜릿 세트" },
+                            { url: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80", caption: "100% 코나 원두 커피" }
+                        ],
+                        rating: "4.3",
+                        desc: "지인 선물용 하와이안 호스트 초콜릿, 마카다미아 넛, 100% 코나 커피 쇼핑.",
+                        tip: "ABC 스토어보다 월마트(Walmart)가 초콜릿과 영양제 가격이 훨씬 저렴함!",
+                        badge: "기념품 쇼핑"
+                    }
+                ]
+            },
+            {
+                day: 10,
+                title: "렌터카 반납 & 귀국 (+1일)",
+                subtitle: "아쉬운 하와이 신혼여행 마무리 및 한국 도착",
+                events: [
+                    {
+                        time: "10:00 AM",
+                        title: "호놀룰루 공항 렌터카 반납 & 출국",
+                        category: "STAY",
+                        mapUrl: "https://www.google.com/maps/place/?q=Honolulu+International+Airport",
+                        img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80",
+                        photos: [
+                            { url: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80", caption: "비행기 창밖의 하와이 바다" },
+                            { url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80", caption: "호놀룰루 공항 출국 게이트" }
+                        ],
+                        rating: "4.1",
+                        desc: "주유 가득(Full Tank) 옵션 확인 후 차량 반납 및 출국 수속.",
+                        tip: "공항 면세점에서는 하와이안 호스트 기획세트 추가 구매 가능.",
+                        badge: "귀국 수속"
+                    }
+                ]
+            }
+        ];
+
+        // Global State Variables
+        let currentDay = 1;
+        let currentCategory = 'ALL';
+
+        // DOM Elements
+        const dayTabsContainer = document.getElementById('day-tabs');
+        const timelineCardsContainer = document.getElementById('timeline-cards');
+        const dayHeaderTitle = document.getElementById('day-title');
+        const dayHeaderSubtitle = document.getElementById('day-subtitle');
+        const dayBadge = document.getElementById('day-badge');
+        const tooltip = document.getElementById('place-preview-tooltip');
+
+        // Initialize App
+        window.addEventListener('DOMContentLoaded', () => {
+            renderDayTabs();
+            renderTimeline();
+            setupFilterButtons();
+            setupTooltipSystem();
+            lucide.createIcons();
+        });
+
+        // Render Day Selector Tabs
+        function renderDayTabs() {
+            dayTabsContainer.innerHTML = '';
+            ITINERARY_DATA.forEach(d => {
+                const button = document.createElement('button');
+                button.className = `px-4 py-2 rounded-xl text-xs md:text-sm font-bold shrink-0 transition flex items-center gap-1.5 ${
+                    d.day === currentDay 
+                        ? 'bg-coral-500 text-white shadow-md shadow-coral-500/20' 
+                        : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
+                }`;
+                button.innerHTML = `<span>Day ${d.day}</span>`;
+                button.addEventListener('click', () => {
+                    currentDay = d.day;
+                    renderDayTabs();
+                    renderTimeline();
+                });
+                dayTabsContainer.appendChild(button);
+            });
+        }
+
+        // Render Timeline Cards based on currentDay & currentCategory
+        function renderTimeline() {
+            const dayData = ITINERARY_DATA.find(d => d.day === currentDay);
+            if (!dayData) return;
+
+            // Update Day Header
+            dayBadge.innerText = `DAY ${dayData.day}`;
+            dayHeaderTitle.innerText = dayData.title;
+            dayHeaderSubtitle.innerText = dayData.subtitle;
+
+            // Filter Events
+            const filteredEvents = dayData.events.filter(e => {
+                if (currentCategory === 'ALL') return true;
+                return e.category === currentCategory;
+            });
+
+            timelineCardsContainer.innerHTML = '';
+
+            if (filteredEvents.length === 0) {
+                timelineCardsContainer.innerHTML = `
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 text-center text-slate-400">
+                        <p class="text-sm">해당 필터 조건에 맞는 일정이 없습니다.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredEvents.forEach((ev, idx) => {
+                const card = document.createElement('div');
+                card.className = "relative pl-8 md:pl-10 group";
+
+                // Icon / Dot Marker Color
+                let markerBg = "bg-coral-500";
+                let catLabel = "🍴 맛집";
+                if (ev.category === 'SPOT') { markerBg = "bg-ocean-500"; catLabel = "🏖️ 명소"; }
+                if (ev.category === 'ACT') { markerBg = "bg-amber-500"; catLabel = "🏄‍♂️ 액티비티"; }
+                if (ev.category === 'STAY') { markerBg = "bg-emerald-500"; catLabel = "🏨 숙소/팁"; }
+
+                // Multi-photo gallery HTML builder
+                let photoGalleryHtml = '';
+                if (ev.photos && ev.photos.length > 0) {
+                    photoGalleryHtml = `
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-2 my-3">
+                            ${ev.photos.map(p => `
+                                <div class="relative group/photo rounded-xl overflow-hidden h-28 md:h-32 bg-slate-100 border border-slate-200/80 shadow-xs">
+                                    <img src="${p.url}" alt="${p.caption}" class="w-full h-full object-cover transition-transform duration-500 group-hover/photo:scale-110">
+                                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-1.5 pt-4 text-[10px] text-white font-medium truncate">
+                                        📸 ${p.caption}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <!-- Node Bullet -->
+                    <div class="absolute left-[-11px] md:left-[-11px] top-1.5 w-6 h-6 rounded-full ${markerBg} text-white flex items-center justify-center text-xs font-bold ring-4 ring-white shadow-md transition-transform group-hover:scale-125 z-10">
+                        ${idx + 1}
+                    </div>
+
+                    <!-- Main Card Container -->
+                    <div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-bold text-coral-600 bg-coral-50 px-2.5 py-1 rounded-md flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-3 h-3"></i> ${ev.time}
+                                </span>
+                                <span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">
+                                    ${catLabel}
+                                </span>
+                            </div>
+                            <!-- Map Direct Link Button -->
+                            <a href="${ev.mapUrl}" target="_blank" 
+                               class="place-hover-trigger inline-flex items-center gap-1 text-xs font-bold text-ocean-700 bg-ocean-50 hover:bg-ocean-100 px-3 py-1.5 rounded-xl transition border border-ocean-200/60 w-fit"
+                               data-img="${ev.img}"
+                               data-title="${ev.title}"
+                               data-rating="${ev.rating}"
+                               data-desc="${ev.desc}"
+                               data-tip="${ev.tip}"
+                               data-cat="${catLabel}">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-ocean-500"></i>
+                                <span>구글지도 보기</span>
+                                <i data-lucide="external-link" class="w-3 h-3 opacity-60"></i>
+                            </a>
+                        </div>
+
+                        <!-- Card Title -->
+                        <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-coral-600 transition mb-2">
+                            <a href="${ev.mapUrl}" target="_blank" 
+                               class="place-hover-trigger hover:underline"
+                               data-img="${ev.img}"
+                               data-title="${ev.title}"
+                               data-rating="${ev.rating}"
+                               data-desc="${ev.desc}"
+                               data-tip="${ev.tip}"
+                               data-cat="${catLabel}">
+                               ${ev.title}
+                            </a>
+                        </h3>
+                        
+                        <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                            ${ev.desc}
+                        </p>
+
+                        <!-- Embedded Photo Gallery (2-3 photos per event) -->
+                        ${photoGalleryHtml}
+
+                        <!-- Honeymoon Tip Box inside card -->
+                        <div class="bg-sand-100 border border-sand-400/30 rounded-xl p-3 flex items-start gap-2 text-xs text-slate-700 mt-2">
+                            <span class="text-base leading-none">💡</span>
+                            <div>
+                                <strong class="font-bold text-slate-900">꿀팁:</strong> ${ev.tip}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                timelineCardsContainer.appendChild(card);
+            });
+
+            lucide.createIcons();
+            attachHoverListeners();
+        }
+
+        // Setup Category Filter Event Listeners
+        function setupFilterButtons() {
+            const filterBtns = document.querySelectorAll('.cat-filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    filterBtns.forEach(b => {
+                        b.className = "cat-filter-btn px-3 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 font-medium transition flex items-center gap-1";
+                    });
+                    btn.className = "cat-filter-btn px-3 py-1 rounded-full bg-slate-900 text-white font-semibold transition flex items-center gap-1";
+                    
+                    currentCategory = btn.getAttribute('data-cat');
+                    renderTimeline();
+                });
+            });
+        }
+
+        // Mouse Hover Preview Tooltip Engine
+        function setupTooltipSystem() {
+            document.addEventListener('mousemove', (e) => {
+                if (tooltip.classList.contains('active')) {
+                    const tooltipWidth = 320;
+                    const tooltipHeight = 240;
+                    
+                    let x = e.clientX + 15;
+                    let y = e.clientY + 15;
+
+                    // Overflow Guard Boundary Logic
+                    if (x + tooltipWidth > window.innerWidth) {
+                        x = e.clientX - tooltipWidth - 15;
+                    }
+                    if (y + tooltipHeight > window.innerHeight) {
+                        y = e.clientY - tooltipHeight - 15;
+                    }
+
+                    tooltip.style.left = `${x}px`;
+                    tooltip.style.top = `${y}px`;
+                }
+            });
+        }
+
+        function attachHoverListeners() {
+            const triggers = document.querySelectorAll('.place-hover-trigger');
+            
+            triggers.forEach(trigger => {
+                trigger.addEventListener('mouseenter', (e) => {
+                    const img = trigger.getAttribute('data-img');
+                    const title = trigger.getAttribute('data-title');
+                    const rating = trigger.getAttribute('data-rating');
+                    const desc = trigger.getAttribute('data-desc');
+                    const tip = trigger.getAttribute('data-tip');
+                    const cat = trigger.getAttribute('data-cat');
+
+                    document.getElementById('tooltip-img').src = img;
+                    document.getElementById('tooltip-title').innerText = title;
+                    document.getElementById('tooltip-rating').innerText = rating;
+                    document.getElementById('tooltip-desc').innerText = desc;
+                    document.getElementById('tooltip-tip').innerText = `💡 ${tip}`;
+                    document.getElementById('tooltip-cat').innerText = cat;
+
+                    tooltip.classList.remove('hidden');
+                    // Small delay to allow CSS transitions
+                    setTimeout(() => {
+                        tooltip.classList.add('active');
+                    }, 10);
+                });
+
+                trigger.addEventListener('mouseleave', () => {
+                    tooltip.classList.remove('active');
+                    setTimeout(() => {
+                        if (!tooltip.classList.contains('active')) {
+                            tooltip.classList.add('hidden');
+                        }
+                    }, 200);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
